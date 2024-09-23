@@ -1,0 +1,254 @@
+:root {
+    --navy-blue: #001f3f;
+    --light-blue: #7FDBFF;
+    --yellow: #FFDC00;
+    --white: #FFFFFF;
+    --gray: #AAAAAA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--navy-blue);
+    color: var(--white);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 3rem;
+    color: var(--light-blue);
+    margin-bottom: 0.5rem;
+}
+
+h2, h3 {
+    color: var(--yellow);
+    margin-bottom: 1rem;
+}
+
+.queue-info {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.progress-bar {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    height: 10px;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.progress {
+    background-color: var(--light-blue);
+    height: 100%;
+    width: 0%;
+    transition: width 0.5s ease-in-out;
+}
+
+.hacks-container {
+    margin-bottom: 2rem;
+}
+
+.hacks-scroll {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--light-blue) var(--navy-blue);
+}
+
+.hacks-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+.hacks-scroll::-webkit-scrollbar-track {
+    background: var(--navy-blue);
+}
+
+.hacks-scroll::-webkit-scrollbar-thumb {
+    background-color: var(--light-blue);
+    border-radius: 3px;
+}
+
+.hack-card {
+    flex: 0 0 auto;
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hack-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hack-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.hack-card p {
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+.hack-card.used {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.hack-card.used:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.hack-content {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: none;
+}
+
+#question {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+#options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.option {
+    background-color: var(--navy-blue);
+    border: 2px solid var(--light-blue);
+    color: var(--white);
+    padding: 0.8rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.option:hover {
+    background-color: var(--light-blue);
+    color: var(--navy-blue);
+}
+
+.option.correct {
+    background-color: #2ECC40;
+    border-color: #2ECC40;
+}
+
+.option.incorrect {
+    background-color: #FF4136;
+    border-color: #FF4136;
+}
+
+.loading-indicator {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 31, 63, 0.9);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.vinyl-record {
+    width: 200px;
+    height: 200px;
+    background-color: #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: spin 2s linear infinite;
+}
+
+.vinyl-label {
+    width: 70px;
+    height: 70px;
+    background-color: var(--light-blue);
+    border-radius: 50%;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-indicator p {
+    margin-top: 20px;
+    color: var(--light-blue);
+    font-size: 1.2rem;
+}
+
+.victory-screen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 31, 63, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.victory-content {
+    text-align: center;
+    color: var(--yellow);
+}
+
+.victory-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.victory-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+#restart-button {
+    background-color: var(--light-blue);
+    color: var(--navy-blue);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#restart-button:hover {
+    background-color: var(--yellow);
+}

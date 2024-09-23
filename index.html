@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue-tify: Coldplay Queue Crusher</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Coldplay Queue-tify</h1>
+            <p>Thw way it should have been</p>
+        </header>
+        <main>
+            <div class="queue-info">
+                <h2>Your Position: <span id="position">2500</span></h2>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+            </div>
+            <div class="hacks-container">
+                <div class="hacks-scroll">
+                    <div class="hack-card" data-hack="yellow">
+                        <h3>Complete the lyrics</h3>
+                        <p>Do you know your songs?<br>[Skip ahead 2500 spots]</p>
+                    </div>
+                    <div class="hack-card" data-hack="vivalavida">
+                        <h3>Viva La Vida</h3>
+                        <p>Guess the next line<br>[Skip ahead 3000 spots]</p>
+                    </div>
+                    <div class="hack-card" data-hack="paradise">
+                        <h3>Paradise</h3>
+                        <p>Fill in the blanks<br>[Skip ahead 2500 spots]</p>
+                    </div>
+                    <div class="hack-card" data-hack="fixYou">
+                        <h3>Fix You</h3>
+                        <p>Arrange the lyrics<br>[Skip ahead 4000 spots]</p>
+                    </div>
+                    <div class="hack-card" data-hack="clocks">
+                        <h3>Clocks</h3>
+                        <p>Identify the verse<br>[Skip ahead 5000 spots]</p>
+                    </div>
+                </div>
+            </div>
+            <div id="hack-content" class="hack-content">
+                <h3 id="hack-title"></h3>
+                <p id="question"></p>
+                <div id="options"></div>
+            </div>
+        </main>
+    </div>
+    <div id="loading-indicator" class="loading-indicator">
+        <div class="vinyl-record">
+            <div class="vinyl-label"></div>
+        </div>
+        <p>Loading Hack...</p>
+    </div>
+    <div id="victory-screen" class="victory-screen">
+        <div class="victory-content">
+            <h2>Congratulations!</h2>
+            <p>Yay! You're a Superfan! You deserve those tickets!</p>
+            <button id="restart-button">Play Again</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
